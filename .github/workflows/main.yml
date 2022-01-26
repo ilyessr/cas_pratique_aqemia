@@ -22,6 +22,7 @@ jobs:
     steps:
       - name: executing ssh commands using ssh key
         uses: appleboy/ssh-action@master
+        debug: True
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
@@ -33,5 +34,6 @@ jobs:
             cd cas_pratique_aqemia-api
             sudo docker-compose down
             sudo docker-compose -f docker-compose.prod.yaml up --build -d
+            
             
           
