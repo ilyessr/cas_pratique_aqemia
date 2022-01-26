@@ -51,7 +51,7 @@ def index():
             <style>
                 p{font-family: "Gill Sans", sans-serif;}
             </style>
-            <title> Age abalone predictor </title>
+            <title> Abalone age predictor </title>
 
         </head>
         <body >
