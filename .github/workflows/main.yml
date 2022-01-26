@@ -22,7 +22,6 @@ jobs:
     steps:
       - name: executing ssh commands using ssh key
         uses: appleboy/ssh-action@master
-        debug: True
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
