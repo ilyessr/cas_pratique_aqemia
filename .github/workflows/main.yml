@@ -27,7 +27,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           script: |
-            sudo su
             rm -rf cas_pratique_aqemia
             git clone git@github.com:ilyessr/cas_pratique_aqemia.git
             cd cas_pratique_aqemia
