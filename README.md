@@ -3,9 +3,13 @@
 This a REST API for serving predictions of abalone age based on an existing
 machine learning model.
 
-- './run_app.sh' : Run the application locally.
-- './run_docker.sh' : Run the docker locally.
-- './run_docker.sh' : Have some documentation about the app
+
+## Commands
+
+Shell scripts (to run in the directory "cas_pratique_aqemia"): 
+- `./run_app.sh` : Run the application locally.
+- `./run_docker.sh` : Run the docker locally.
+- `./run_docker.sh` : Have some documentation about the app
 
 
 The api has been deployed in EC2 : http://34.193.161.120:8000/docs#/default/make_prediction_abalones_post
@@ -15,7 +19,7 @@ Link of the github : https://github.com/ilyessr/cas_pratique_aqemia
 
 
 
-# Organisation of the directory
+## Organisation of the directory
 
 - abalone_app :
 
