@@ -46,6 +46,6 @@ def make_prediction(user_request: UserRequestInput):
 def index():
     return (
         "<p>Welcome to the REST API used for \
-            age prediction of abalone :)</p>"
+            age prediction of abalone !</p>"
 
     )
