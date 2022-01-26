@@ -28,9 +28,9 @@ jobs:
           key: ${{ secrets.KEY }}
           script: |
             sudo su
-            rm -rf anonymization-api
+            rm -rf cas_pratique_aqemia
             git clone git@github.com:ilyessr/cas_pratique_aqemia.git
-            cd cas_pratique_aqemia-api
+            cd cas_pratique_aqemia
             sudo docker-compose down
             sudo docker-compose build
             sudo docker-compose up -d
