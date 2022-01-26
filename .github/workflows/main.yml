@@ -26,6 +26,7 @@ jobs:
           host: ${{ secrets.HOST}}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
           script: |
             rm -rf cas_pratique_aqemia
             git clone git@github.com:ilyessr/cas_pratique_aqemia.git
