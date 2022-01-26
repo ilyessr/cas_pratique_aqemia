@@ -45,7 +45,29 @@ def make_prediction(user_request: UserRequestInput):
 @app.get("/", response_class=HTMLResponse)
 def index():
     return (
-        "<p>Welcome to the REST API used for \
-            age prediction of abalone !</p>"
+        """
+    <html>
+        <head>
+            <style>
+                p{font-family: "Gill Sans", sans-serif;}
+            </style>
+            <title> Age abalone predictor </title>
+
+        </head>
+        <body >
+
+            <h1>Welcome</h1>
+            <p>
+            The goal of this REST API is to serve predictions about the age 
+            of the abalones from an existing machine learning model. </p>
+            <p>Click on the button to test it.</p>
+
+            <button onclick="window.location.href = 
+            '/docs#/default/make_prediction_abalones_post';">
+                Click here
+            </button>
+        </body>
+    </html>
+        """
 
     )
