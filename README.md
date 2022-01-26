@@ -39,5 +39,6 @@ Link of the github : https://github.com/ilyessr/cas_pratique_aqemia
  - docker-compose.yaml
  - run_app.sh
  - run_docker.sh
+ - docs.sh
 
 
