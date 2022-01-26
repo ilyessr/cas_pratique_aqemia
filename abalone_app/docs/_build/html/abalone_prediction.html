@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>abalone_prediction package &mdash; abalone_predict 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="abalone_prediction" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> abalone_predict
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">abalone_prediction</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">abalone_prediction package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-abalone_prediction.main">abalone_prediction.main module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-abalone_prediction.modeling">abalone_prediction.modeling module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dataset">Dataset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ml-model-used">ML Model used</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#context">Context</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#features">Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#target-feature-ring-of-the-abalone">Target feature : ring of the abalone</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-abalone_prediction">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">abalone_predict</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">abalone_prediction</a> &raquo;</li>
+      <li>abalone_prediction package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/abalone_prediction.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="abalone-prediction-package">
+<h1>abalone_prediction package<a class="headerlink" href="#abalone-prediction-package" title="Permalink to this headline"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-abalone_prediction.main">
+<span id="abalone-prediction-main-module"></span><h2>abalone_prediction.main module<a class="headerlink" href="#module-abalone_prediction.main" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="abalone_prediction.main.AbaloneIn">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">abalone_prediction.main.</span></span><span class="sig-name descname"><span class="pre">AbaloneIn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sex</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diameter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">whole_weight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shucked_weight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">viscera_weight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell_weight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#abalone_prediction.main.AbaloneIn" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydantic.main.BaseModel</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="abalone_prediction.main.AbaloneIn.diameter">
+<span class="sig-name descname"><span class="pre">diameter</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#abalone_prediction.main.AbaloneIn.diameter" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="abalone_prediction.main.AbaloneIn.height">
+<span class="sig-name descname"><span class="pre">height</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#abalone_prediction.main.AbaloneIn.height" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="abalone_prediction.main.AbaloneIn.length">
+<span class="sig-name descname"><span class="pre">length</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#abalone_prediction.main.AbaloneIn.length" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="abalone_prediction.main.AbaloneIn.sex">
+<span class="sig-name descname"><span class="pre">sex</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#abalone_prediction.main.AbaloneIn.sex" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="abalone_prediction.main.AbaloneIn.shell_weight">
+<span class="sig-name descname"><span class="pre">shell_weight</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#abalone_prediction.main.AbaloneIn.shell_weight" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="abalone_prediction.main.AbaloneIn.shucked_weight">
+<span class="sig-name descname"><span class="pre">shucked_weight</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#abalone_prediction.main.AbaloneIn.shucked_weight" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="abalone_prediction.main.AbaloneIn.viscera_weight">
+<span class="sig-name descname"><span class="pre">viscera_weight</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#abalone_prediction.main.AbaloneIn.viscera_weight" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="abalone_prediction.main.AbaloneIn.whole_weight">
+<span class="sig-name descname"><span class="pre">whole_weight</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#abalone_prediction.main.AbaloneIn.whole_weight" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="abalone_prediction.main.AbaloneOut">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">abalone_prediction.main.</span></span><span class="sig-name descname"><span class="pre">AbaloneOut</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#abalone_prediction.main.AbaloneOut" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydantic.main.BaseModel</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="abalone_prediction.main.AbaloneOut.label">
+<span class="sig-name descname"><span class="pre">label</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#abalone_prediction.main.AbaloneOut.label" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="abalone_prediction.main.AbaloneOut.probability">
+<span class="sig-name descname"><span class="pre">probability</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#abalone_prediction.main.AbaloneOut.probability" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="abalone_prediction.main.OutputPrediction">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">abalone_prediction.main.</span></span><span class="sig-name descname"><span class="pre">OutputPrediction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#abalone_prediction.main.AbaloneOut" title="abalone_prediction.main.AbaloneOut"><span class="pre">abalone_prediction.main.AbaloneOut</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#abalone_prediction.main.OutputPrediction" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydantic.main.BaseModel</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="abalone_prediction.main.OutputPrediction.outputs">
+<span class="sig-name descname"><span class="pre">outputs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#abalone_prediction.main.AbaloneOut" title="abalone_prediction.main.AbaloneOut"><span class="pre">abalone_prediction.main.AbaloneOut</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#abalone_prediction.main.OutputPrediction.outputs" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="abalone_prediction.main.UserRequestInput">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">abalone_prediction.main.</span></span><span class="sig-name descname"><span class="pre">UserRequestInput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inputs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#abalone_prediction.main.AbaloneIn" title="abalone_prediction.main.AbaloneIn"><span class="pre">abalone_prediction.main.AbaloneIn</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#abalone_prediction.main.UserRequestInput" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydantic.main.BaseModel</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="abalone_prediction.main.UserRequestInput.inputs">
+<span class="sig-name descname"><span class="pre">inputs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#abalone_prediction.main.AbaloneIn" title="abalone_prediction.main.AbaloneIn"><span class="pre">abalone_prediction.main.AbaloneIn</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#abalone_prediction.main.UserRequestInput.inputs" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="abalone_prediction.main.hello">
+<span class="sig-prename descclassname"><span class="pre">abalone_prediction.main.</span></span><span class="sig-name descname"><span class="pre">hello</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#abalone_prediction.main.hello" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="abalone_prediction.main.make_prediction">
+<span class="sig-prename descclassname"><span class="pre">abalone_prediction.main.</span></span><span class="sig-name descname"><span class="pre">make_prediction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#abalone_prediction.main.UserRequestInput" title="abalone_prediction.main.UserRequestInput"><span class="pre">abalone_prediction.main.UserRequestInput</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#abalone_prediction.main.make_prediction" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-abalone_prediction.modeling">
+<span id="abalone-prediction-modeling-module"></span><h2>abalone_prediction.modeling module<a class="headerlink" href="#module-abalone_prediction.modeling" title="Permalink to this headline"></a></h2>
+<p>Binary classification of the abalones to predict their age.
+(0:less than 15 years, 1:equal/more)</p>
+<section id="dataset">
+<h3>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline"></a></h3>
+<p>“../data/abalone.data”, 4177 observations, 9 features.</p>
+</section>
+<section id="ml-model-used">
+<h3>ML Model used<a class="headerlink" href="#ml-model-used" title="Permalink to this headline"></a></h3>
+<p>Random Forest Classification (bad precision)</p>
+</section>
+<section id="context">
+<h3>Context<a class="headerlink" href="#context" title="Permalink to this headline"></a></h3>
+<p>Predicting the age of abalone from physical measurements.  The age of
+abalone is determined by cutting the shell through the cone, staining it,
+and counting the number of rings through a microscope – a boring and
+time-consuming task.  Other measurements, which are easier to obtain, are
+used to predict the age.</p>
+</section>
+<section id="features">
+<h3>Features<a class="headerlink" href="#features" title="Permalink to this headline"></a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>sex / nominal / – / M, F, and I (infant)</p></li>
+<li><p>Length / continuous / mm / Longest shell measurement</p></li>
+<li><p>Diameter / continuous / mm / perpendicular to length</p></li>
+<li><p>Height / continuous / mm / with meat in shell</p></li>
+<li><p>Whole weight / continuous / grams / whole abalone</p></li>
+<li><p>Shucked weight / continuous / grams / weight of meat</p></li>
+<li><p>Viscera weight / continuous / grams / gut weight (after bleeding)</p></li>
+<li><p>Shell weight / continuous / grams / after being dried</p></li>
+<li><p>Rings / integer / – / +1.5 gives the age in years</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="target-feature-ring-of-the-abalone">
+<h3>Target feature : ring of the abalone<a class="headerlink" href="#target-feature-ring-of-the-abalone" title="Permalink to this headline"></a></h3>
+<dl class="simple">
+<dt>‘target’ (based on ‘rings’ feature) :</dt><dd><ul class="simple">
+<li><p>0 : less than 10 rings ( &lt; 15 years)</p></li>
+<li><p>1 : more than 10 rings ( &gt;= 15 years)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="abalone_prediction.modeling.dummy_encode">
+<span class="sig-prename descclassname"><span class="pre">abalone_prediction.modeling.</span></span><span class="sig-name descname"><span class="pre">dummy_encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#abalone_prediction.modeling.dummy_encode" title="Permalink to this definition"></a></dt>
+<dd><p>Encoding categorical features; here ‘sex’ of the abalone.
+Male (1,0,0), Female(0,1,0) and Infant(0,0,1).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>in_df</strong> (<em>pandas.DataFrame</em>) – X_train (or X_test).</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>out_df: X_train (or X_test) processed.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="abalone_prediction.modeling.load_data_abalone">
+<span class="sig-prename descclassname"><span class="pre">abalone_prediction.modeling.</span></span><span class="sig-name descname"><span class="pre">load_data_abalone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#abalone_prediction.modeling.load_data_abalone" title="Permalink to this definition"></a></dt>
+<dd><p>Load abalone data into a panda dataframe then transform the feature
+‘rings’ (int) into ‘target’ (int).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – Path of the abalone dataset.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>df: The dataset of the experience with
+feature ‘rings’ transformed into ‘target’ feature.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="abalone_prediction.modeling.load_model">
+<span class="sig-prename descclassname"><span class="pre">abalone_prediction.modeling.</span></span><span class="sig-name descname"><span class="pre">load_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#abalone_prediction.modeling.load_model" title="Permalink to this definition"></a></dt>
+<dd><p>Load the ML model store at the path</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – Path of the model stored</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="abalone_prediction.modeling.minmax_scale">
+<span class="sig-prename descclassname"><span class="pre">abalone_prediction.modeling.</span></span><span class="sig-name descname"><span class="pre">minmax_scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#abalone_prediction.modeling.minmax_scale" title="Permalink to this definition"></a></dt>
+<dd><p>Rescaling numerical features based on their boundaries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>in_df</strong> (<em>pandas.DataFrame</em>) – X_train (or X_test).</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>out_df: X_train (or X_test) processed.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="abalone_prediction.modeling.predict_abalone">
+<span class="sig-prename descclassname"><span class="pre">abalone_prediction.modeling.</span></span><span class="sig-name descname"><span class="pre">predict_abalone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">abalone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#abalone_prediction.modeling.predict_abalone" title="Permalink to this definition"></a></dt>
+<dd><p>Return the label and the probability for one abalone.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>abalone</strong> (<em>dict/list</em>) – dictionary such as ‘{“val1”:val1, “val2”:val2}’ or a list such as
+‘[val1, val2]’. The dict of the list can have more than  two items.</p></li>
+<li><p><strong>model</strong> (<em>sklearn</em>) – sklearn model.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>abalone_predict: Dictionary where “label” and “proba” are
+the keys. {“label”: label, “proba”: proba}</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="abalone_prediction.modeling.preprocessing_data">
+<span class="sig-prename descclassname"><span class="pre">abalone_prediction.modeling.</span></span><span class="sig-name descname"><span class="pre">preprocessing_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#abalone_prediction.modeling.preprocessing_data" title="Permalink to this definition"></a></dt>
+<dd><p>Get ‘X_train’ and ‘X_test’ from ‘data’(dict), apply one-hot encoding
+and rescaling on them then return the dict with X_train and X_test
+processed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>dict</em>) – Dictionary structured as:
+{“X_train”: X_train, “X_test”: X_test,
+“y_train”: y_train, “y_test”: y_test}</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>data: The same dictionary on the input with X_train
+and X_test pre-processed.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="abalone_prediction.modeling.print_roc_auc">
+<span class="sig-prename descclassname"><span class="pre">abalone_prediction.modeling.</span></span><span class="sig-name descname"><span class="pre">print_roc_auc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#abalone_prediction.modeling.print_roc_auc" title="Permalink to this definition"></a></dt>
+<dd><p>Print the ML ROC AUC score</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>sklearn.RandomForestClassifier</em>) – ML model</p></li>
+<li><p><strong>data</strong> (<em>dict</em>) – Dictionary structured as : {“X_train”: X_train, “X_test”: X_test,
+“y_train”: y_train, “y_test”: y_test}</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="abalone_prediction.modeling.split_data">
+<span class="sig-prename descclassname"><span class="pre">abalone_prediction.modeling.</span></span><span class="sig-name descname"><span class="pre">split_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.33</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">42</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#abalone_prediction.modeling.split_data" title="Permalink to this definition"></a></dt>
+<dd><p>Split the dataframe into test and train data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pandas.DataFrame</em>) – The dataset of the experience.</p></li>
+<li><p><strong>test_size</strong> (<em>float/int</em>) – Proportion of the dataset to
+include to the test set.</p></li>
+<li><p><strong>seed</strong> (<em>int</em>) – Value to have reproducible results.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>data : Dictionary structured as:
+{“X_train”: X_train, “X_test”: X_test,
+“y_train”: y_train, “y_test”: y_test}</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="abalone_prediction.modeling.store_model">
+<span class="sig-prename descclassname"><span class="pre">abalone_prediction.modeling.</span></span><span class="sig-name descname"><span class="pre">store_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#abalone_prediction.modeling.store_model" title="Permalink to this definition"></a></dt>
+<dd><p>Store the ML model store at the path</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>sklearn</em>) – ML model to store</p></li>
+<li><p><strong>path</strong> (<em>str</em>) – Path of the model stored</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="abalone_prediction.modeling.train_model">
+<span class="sig-prename descclassname"><span class="pre">abalone_prediction.modeling.</span></span><span class="sig-name descname"><span class="pre">train_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#abalone_prediction.modeling.train_model" title="Permalink to this definition"></a></dt>
+<dd><p>Train and return the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>dict</em>) – Dictionary structured as:
+{“X_train”: X_train, “X_test”: X_test,
+“y_train”: y_train, “y_test”: y_test}</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>model: Random Forest model
+trained.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>sklearn.RandomForestClassifier</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+<section id="module-abalone_prediction">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-abalone_prediction" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="abalone_prediction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Ilyess RACHEDI.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
