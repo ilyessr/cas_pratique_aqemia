@@ -8,7 +8,7 @@ machine learning model.
 - './run_docker.sh' : Have some documentation about the app
 
 
-The api is in EC2 : http://34.193.161.120:8000/docs#/default/make_prediction_abalones_post
+The api has been deployed in EC2 : http://34.193.161.120:8000/docs#/default/make_prediction_abalones_post
 
 Github action has been used to create a deployment workflow.
 Link of the github : https://github.com/ilyessr/cas_pratique_aqemia
@@ -18,17 +18,18 @@ Link of the github : https://github.com/ilyessr/cas_pratique_aqemia
 # Organisation of the directory
 
 - abalone_app :
-    --- abalone_prediction :
-        --- main.py : API (FastAPI + Pydantic)
-        --- modeling.py : Python code based on the jupyter notebook
 
-    -- data :
-        --- pickles : Contains the model.
-        --- test_data : Contain expected data for units test + script to generate them
+        --- abalone_prediction :
+            --- main.py : API (FastAPI + Pydantic)
+            --- modeling.py : Python code based on the jupyter notebook
 
-    -- docs : Generated from docstring with Sphinx
+        -- data :
+            --- pickles : Contains the model.
+            --- test_data : Contain expected data for units test + script to generate them
 
-    --tests : Units tests
+        -- docs : Generated from docstring with Sphinx
+
+        --tests : Units tests
 
  - Dockerfile
  - docker-compose.yaml
