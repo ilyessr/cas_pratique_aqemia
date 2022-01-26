@@ -23,10 +23,9 @@ jobs:
       - name: executing ssh commands using ssh key
         uses: appleboy/ssh-action@v0.1.4
         with:
-          host: ${{ secrets.HOST}}
+          host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          port: ${{ secrets.PORT }}
           script: |
             rm -rf cas_pratique_aqemia
             git clone git@github.com:ilyessr/cas_pratique_aqemia.git
